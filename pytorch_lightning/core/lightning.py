@@ -36,7 +36,7 @@ class LightningModule(ABC, ModuleProperties, GradInformation, ModelIO, ModelHook
         super().__init__(*args, **kwargs)
 
         #: Current dtype
-        self.dtype = torch.FloatTensor
+        self._dtype = torch.FloatTensor
 
         self.exp_save_path = None
 

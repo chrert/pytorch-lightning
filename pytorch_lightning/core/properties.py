@@ -1,12 +1,11 @@
-from abc import ABC
 from typing import Union, Optional
 
 import torch
 
 
-class ModuleProperties(ABC, torch.nn.Module):
+class ModuleProperties(torch.nn.Module):
     _device: ...
-    _dtype: ...
+    _dtype: Union[str, torch.dtype]
 
     @property
     def dtype(self) -> Union[str, torch.dtype]:
