@@ -4,7 +4,7 @@ from typing import Union, Optional
 import torch
 
 
-class ModuleProperties(ABC, torch.nn.Module):
+class ModuleProperties(torch.nn.Module):
     def __init__(self, *args, **kwargs):
         """
         Args:
