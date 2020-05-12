@@ -4,15 +4,9 @@ from typing import Union, Optional
 import torch
 
 
-class ModuleProperties(torch.nn.Module):
-    def __init__(self, *args, **kwargs):
-        """
-        Args:
-            name: the metric's name
-        """
-        super().__init__(*args, **kwargs)
-        self._dtype = torch.get_default_dtype()
-        self._device = torch.device('cpu')
+class ModuleProperties(ABC, torch.nn.Module):
+    _device: ...
+    _dtype: ...
 
     @property
     def dtype(self) -> Union[str, torch.dtype]:
